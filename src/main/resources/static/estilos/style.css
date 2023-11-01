@@ -80,6 +80,10 @@ body{
     height: 180px;
     width: 180px;
 }
+#imagestyle{
+    width: 15%;
+    left: 20%;
+}
 .github{
     display: flex;
     flex-direction: column;
