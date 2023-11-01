@@ -7,6 +7,56 @@
     <link rel="stylesheet" href="/estilos/aboutStyle.css">
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/Cookies.css">
+
+    <style>
+        /* Estilos gerais do formulário */
+        #userForm {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Estilos para telas menores (dispositivos móveis) */
+        @media (max-width: 768px) {
+            #userForm {
+                width: 100%;
+            }
+            .nomeUser,
+            .senhaUser {
+                width: 100%;
+            }
+            #imagestyle {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* Estilos para o botão no formulário */
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Estilos para o checkbox e rótulo */
+        #showPassword {
+            margin-right: 5px;
+        }
+        label[for="showPassword"] {
+            font-size: 14px;
+        }
+
+        /* Outros estilos */
+        .mensagem {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <header class="cabecalho">
@@ -25,13 +75,12 @@
             <h1 class="titulo">Area de login</h1>
             <div class="areaLogin">
                 <br><br>
-
-                    <form action="/processForm" method="post" id="userForm">
-                        <div th:if="${mensagem}" th:text="${mensagem}" class="mensagem"></div>
+                <form action="/processForm" method="post" id="userForm">
+                    <div th:if="${mensagem}" th:text="${mensagem}" class="mensagem"></div>
                     <br>
                     <input class="nomeUser" type="text" id="username" name="username" placeholder="E-mail/Nome" required><br><br>
                     <input class="senhaUser" type="password" id="password" name="password" placeholder="Senha" required>
-                        <img src="image/LockCade.png" id="imagestyle">
+                    <img src="image/LockCade.png" id="imagestyle">
                     <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
                     <label for="showPassword">Mostrar</label><br><br>
                     <select id="action" name="action">
