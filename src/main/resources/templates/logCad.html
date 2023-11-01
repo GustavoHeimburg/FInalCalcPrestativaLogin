@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="estilos/Cookies.css">
 
     <style>
-        /* Estilos gerais do formulário */
         #userForm {
             max-width: 400px;
             margin: 0 auto;
@@ -18,22 +17,22 @@
             border-radius: 5px;
         }
 
-        /* Estilos para telas menores (dispositivos móveis) */
         @media (max-width: 768px) {
             #userForm {
                 width: 100%;
             }
+
             .nomeUser,
             .senhaUser {
                 width: 100%;
             }
+
             #imagestyle {
                 width: 50px;
                 height: 50px;
             }
         }
 
-        /* Estilos para o botão no formulário */
         button {
             background-color: #007BFF;
             color: white;
@@ -43,18 +42,17 @@
             cursor: pointer;
             font-size: 16px;
         }
-
-        /* Estilos para o checkbox e rótulo */
         #showPassword {
             margin-right: 5px;
         }
+
         label[for="showPassword"] {
             font-size: 14px;
         }
 
         /* Outros estilos */
         .mensagem {
-            color: red;
+            color: white;
         }
     </style>
 </head>
@@ -69,16 +67,17 @@
     <p>Este site utiliza cookies. Ao continuar a navegar no site, você concorda com o uso de cookies.</p>
     <button id="accept-cookies">Aceitar Cookies</button>
 </div>
-    <main class="apresentacao">
-        <section class="conteudo">
-            <section class="login">
+<main class="apresentacao">
+    <section class="conteudo">
+        <section class="login">
             <h1 class="titulo">Area de login</h1>
             <div class="areaLogin">
                 <br><br>
                 <form action="/processForm" method="post" id="userForm">
                     <div th:if="${mensagem}" th:text="${mensagem}" class="mensagem"></div>
                     <br>
-                    <input class="nomeUser" type="text" id="username" name="username" placeholder="E-mail/Nome" required><br><br>
+                    <input class="nomeUser" type="text" id="username" name="username" placeholder="E-mail/Nome"
+                           required><br><br>
                     <input class="senhaUser" type="password" id="password" name="password" placeholder="Senha" required>
                     <img src="image/LockCade.png" id="imagestyle">
                     <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
@@ -91,19 +90,19 @@
                 </form>
 
             </div>
-            </section>
-            <div class="github" style="position: relative; top: 25%">
-                <h2 class="github_sub">Acesse este repositório:</h2>
-                <a class="github_link" href="https://github.com/HenriqueStrada/CalculadoraPrestativaSpringBoot">
-                    <img src="/image/github.png" height="32" width="33" alt="gitHub Icon"/>GitHub</a>
-            </div>
         </section>
-        <img class="imagem" src="/image/login.png" height="480" width="480" alt="eu sabo image"/>
-        <script src="/dalejs.js"></script>
-    </main>
-    <footer class="rodaPe">
-        <p>Desenvolvido por Henrique Strada e Gustavo Heimburg</p>
-    </footer>
+        <div class="github" style="position: relative; top: 25%">
+            <h2 class="github_sub">Acesse este repositório:</h2>
+            <a class="github_link" href="https://github.com/HenriqueStrada/CalculadoraPrestativaSpringBoot">
+                <img src="/image/github.png" height="32" width="33" alt="gitHub Icon"/>GitHub</a>
+        </div>
+    </section>
+    <img class="imagem" src="/image/login.png" height="480" width="480" alt="eu sabo image"/>
+    <script src="/dalejs.js"></script>
+</main>
+<footer class="rodaPe">
+    <p>Desenvolvido por Henrique Strada e Gustavo Heimburg</p>
+</footer>
 
 <script>
     function togglePasswordVisibility() {
@@ -116,7 +115,7 @@
     }
 </script>
 <script>
-    document.getElementById('accept-cookies').addEventListener('click', function() {
+    document.getElementById('accept-cookies').addEventListener('click', function () {
         document.getElementById('cookie-banner').style.display = 'none';
     });
 </script>
