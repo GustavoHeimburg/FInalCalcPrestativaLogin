@@ -38,7 +38,7 @@ public class LoginController {
             model.addAttribute("mensagem", "Ação inválida.");
         }
 
-        return "logCad";
+        return "logCad2";
     }
 
 
